@@ -249,7 +249,7 @@
     <div class="wrap">
       <canvas id="swirl" width="680" height="680" aria-hidden="true"></canvas>
       <h1>Every server.<br><span class="water">One console.</span></h1>
-      <p class="subtitle">Lemuri is a free, open source desktop SSH client for the servers and VPS you manage: a tree of hosts, tabs and split terminals, uploads over SFTP, live metrics, an encrypted vault, one-file backups, and safe sharing with your team.</p>
+      <p class="subtitle">Lemuri is a free, open source desktop SSH client for the servers and VPS you manage, native and light (C++ and Qt, it opens in a fraction of a second): a tree of hosts, tabs and split terminals, uploads over SFTP, live metrics, an encrypted vault, one-file backups, and safe sharing with your team.</p>
       <div class="actions">
         <a class="btn primary" id="get" href="#download">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
@@ -260,7 +260,7 @@
           <span>Source on GitHub</span>
         </a>
       </div>
-      <p class="download-note" id="download-note">Free and open source · MIT license</p>
+      <p class="download-note" id="download-note">Free and open source · MIT license · Linux (.deb)</p>
     </div>
   </div>
 
@@ -312,10 +312,10 @@
           </div>
         </div>
         <div class="row">
-          <div class="window"><img src="shots/transfers-card.png" width="880" height="360" loading="lazy" alt="Right-click on notes.txt after ls: the menu offers Upload files to the current folder and Download notes.txt"><img class="below" src="shots/progress-card.png" width="1040" height="95" loading="lazy" alt="The status bar during a download: app.log at 64 percent, one more transfer queued, with a progress bar and a cancel button"></div>
+          <div class="window"><img src="shots/transfers-card.png" width="880" height="360" loading="lazy" alt="Right-click on notes.txt after ls: the menu offers Upload files to the current folder and Download notes.txt"><img class="below" src="shots/progress-card.png" width="1040" height="58" loading="lazy" alt="The status bar during a download: app.log at 64 percent, one more transfer queued, with a progress bar and a cancel button"></div>
           <div>
             <h3>Upload and download, from the terminal</h3>
-            <p><strong>Upload:</strong> drag files or folders onto a terminal, or right-click it and choose <em>Upload files to the current folder…</em>. They go where the shell is.</p><p><strong>Download:</strong> after an <code>ls</code>, right-click a file or folder name and choose <em>Download "name"…</em>, then pick the folder on your computer.</p><p>Before anything moves Lemuri tells you what would be overwritten. Progress, the queue and a cancel button are in the status bar; files are written under a temporary name until complete, and symbolic links are not followed.</p>
+            <p><strong>Upload:</strong> drag files or folders onto a terminal, or right-click it and choose <em>Upload files to the current folder…</em>. They go to the folder the shell is in, when it says so (see the steps below), otherwise to your home folder.</p><p><strong>Download:</strong> after an <code>ls</code>, right-click a file or folder name and choose <em>Download "name"…</em>, then pick the folder on your computer.</p><p>Before anything moves Lemuri tells you what would be overwritten. Progress, the queue and a cancel button are in the status bar; files are written under a temporary name until complete, and symbolic links are not followed.</p>
           </div>
         </div>
         <div class="row">
@@ -333,14 +333,14 @@
           </div>
         </div>
         <div class="row">
-          <div class="window"><img src="shots/backup-card.png" width="664" height="600" loading="lazy" alt="Export everything: the SSH keys to include, ticked, and a passphrase for the file"></div>
+          <div class="window"><img src="shots/backup-card.png" width="680" height="553" loading="lazy" alt="Export everything: the SSH keys to include, ticked, and a passphrase for the file"></div>
           <div>
             <h3>Backup to another PC</h3>
             <p>One encrypted file with your hosts, the whole vault and the SSH keys you tick. Import it on the new PC: nothing in <code>~/.ssh</code> is ever overwritten.</p>
           </div>
         </div>
         <div class="row">
-          <div class="window"><img src="shots/sshimport-card.png" width="860" height="396" loading="lazy" alt="The import of ~/.ssh/config: a table of hosts with jump hosts and keys, duplicates unticked"></div>
+          <div class="window"><img src="shots/sshimport-card.png" width="824" height="353" loading="lazy" alt="The import of ~/.ssh/config: a table of hosts with jump hosts and keys, duplicates unticked"></div>
           <div>
             <h3>Import your ~/.ssh/config</h3>
             <p>Every <code>Host</code> of your SSH configuration in a table, <code>ProxyJump</code> and keys included. Duplicates and git services start unticked.</p>
@@ -357,7 +357,7 @@
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7 17 2.5-7.5L21 11z"/></svg></div>
           <h3>A clickable terminal</h3>
-          <p>After <code>ls</code>, double-click a folder to enter it or a text file to open it in <code>nano</code>; double-click at the prompt for <code>ls</code>. Lemuri types the command for you, in plain sight, skips binary and huge files, and one click on the terminal turns it off.</p>
+          <p>After <code>ls</code>, double-click a folder to enter it or a text file to open it in <code>nano</code>; double-click at the prompt for <code>ls</code>. Turn on <em>Interactive mode</em> in Settings: Lemuri then types the command for you, in plain sight and only at an empty prompt, and skips binary files and those over 1 MB.</p>
         </div>
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
@@ -370,9 +370,9 @@
           <p>A <em>Terminal</em> tab at the bottom opens a shell on your own computer, next to the servers. In ghost mode it is one tab away, under the session you are watching.</p>
         </div>
         <div class="card">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-5-6-5M12 19h8"/></svg></div>
-          <h3>From any terminal</h3>
-          <p><code>lemuri -s db-01</code> opens the shell in the terminal you are already in, through the same jump hosts. Saved passwords come from the vault after you unlock it, and never show up in <code>ps</code>.</p>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/></svg></div>
+          <h3>Signed updates, in one click</h3>
+          <p>When a new version is out, Lemuri tells you and installs it from the app. Every package is signed, and the signature is checked before anything is installed; a package that does not match is refused.</p>
         </div>
       </div>
     </div>
@@ -399,7 +399,7 @@
         <h2>Move files to and from a server</h2>
         <p class="intro">Straight between your desktop and the folder you are working in, over the SSH connection that is already open: no second login, no separate SFTP client.</p>
         <ol class="steps">
-          <li><strong>Go to the folder</strong>In the terminal of the server, <code>cd</code> to where the files should land. Lemuri asks the shell where it is, so the upload follows you.</li>
+          <li><strong>Go to the folder</strong>In the terminal of the server, <code>cd</code> to where the files should land. If the shell announces its folder (OSC 7, as many shells set up by the distribution do), the upload follows it; with <em>Interactive mode</em> on in Settings, Lemuri asks the shell itself. Otherwise the files go to your home folder on the server.</li>
           <li><strong>Drop the files, or pick them</strong>Drag files or whole folders from your file manager onto the terminal. Or right-click the terminal and choose <em>Upload files to the current folder…</em> to pick them in your desktop's own file dialog.</li>
           <li><strong>Or bring one down</strong>After an <code>ls</code>, right-click the name of a file or folder and choose <em>Download "name"…</em>, then the folder on your computer. If ls listed another folder (<code>ls /var/log</code>), the name is taken from there.</li>
           <li><strong>Confirm</strong>Lemuri checks the folder on the server first and tells you which files already there would be overwritten. Nothing is sent before you say yes.</li>
@@ -423,20 +423,33 @@
   <section id="download">
     <div class="wrap">
       <h2>Get Lemuri</h2>
-      <p class="intro">Free and open source, MIT licensed. There are no ready-made packages yet: Lemuri builds and runs from source.</p>
+      <p class="intro">Free and open source, MIT licensed. A package for Ubuntu and Debian, about 1.3&nbsp;MB, that keeps itself up to date.</p>
       <div class="split">
         <div>
-          <p style="margin:0 0 10px;color:var(--muted)">With JDK 21 and <code>unzip</code> installed:</p>
+          <p style="margin:0 0 14px"><a class="btn primary link-release" href="#">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+            <span>Download the .deb</span></a></p>
+          <p style="margin:0 0 10px;color:var(--muted)">Then install it, with the libraries it needs:</p>
           <div class="terminal">
+            <div><span class="p">$ </span>sudo apt install ./lemuri_*_amd64.deb</div>
+          </div>
+          <p style="margin:22px 0 10px;color:var(--muted)">Or build it from source, with Qt 6.4 or newer, libvterm, libssh, libargon2 and OpenSSL:</p>
+          <div class="terminal">
+            <div><span class="p">$ </span>sudo apt install qt6-base-dev libvterm-dev libxcb1-dev libssh-dev libargon2-dev libssl-dev cmake ninja-build</div>
             <div><span class="p">$ </span>git clone <span class="url-repo">https://github.com/getlemuri/lemuri</span></div>
             <div><span class="p">$ </span>cd lemuri</div>
-            <div><span class="p">$ </span>./mvnw javafx:run</div>
+            <div><span class="p">$ </span>cmake -S . -B build -G Ninja &amp;&amp; cmake --build build</div>
+            <div><span class="p">$ </span>build/lemuri</div>
           </div>
-          <p style="color:var(--muted);font-size:14px">Maven is not needed: the wrapper downloads it the first time.</p>
         </div>
         <table class="facts">
-          <tr><td>Linux</td><td>Build from source. Developed and tested on Ubuntu with GNOME.</td></tr>
+          <tr><td>Linux</td><td>Ubuntu 24.04 or newer, Debian and their derivatives (.deb). Developed and tested on Ubuntu with GNOME. A .tar.gz is in every release for other distributions.</td></tr>
           <tr><td>macOS</td><td>Builds from source, but not tested on a real Mac yet.</td></tr>
+          <tr><td>Data</td><td>Your hosts, vault and settings stay in <code>~/.lemuri</code>, in the same format as the first version of Lemuri, so updating keeps them.</td></tr>
+          <tr><td>Signed</td><td>Packages are signed, and the app installs an update only if the signature matches one of these keys (<code>ssh-keygen -lf</code>):<br>
+            <code>SHA256:j0T3yuGBNy1IjFQzKAhJYvHk3sdBVy2/VPTR9D2khp4</code> releases<br>
+            <code>SHA256:hYz6UYHfOhpx57c5oNKlsmNrnhZu6hitDVzi0Hxk1qo</code> backup, kept offline<br>
+            Release tags: <code>SHA256:+EFiAMVsA/VCzYGuPjboAI5GvWm6QF+ugcAelcScT3A</code></td></tr>
         </table>
       </div>
     </div>
@@ -469,6 +482,7 @@
   document.querySelectorAll(".link-github").forEach(a => a.href = github);
   document.querySelectorAll(".link-security").forEach(a => a.href = github + "/security/advisories/new");
   document.querySelectorAll(".url-repo").forEach(s => s.textContent = github);
+  document.querySelectorAll(".link-release").forEach(a => a.href = github + "/releases/latest");
 
   // The tour viewer: the screenshot fits the window; a click zooms where you clicked (and back), the wheel
   // zooms too, dragging moves it, the arrows go to the next one, Esc or a click on the dark closes it.

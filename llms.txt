@@ -1,30 +1,36 @@
 # Lemuri
 
-> Lemuri is a free, open source (MIT) desktop SSH console for the servers and VPS you manage: a tree of hosts, tabs and split terminals, uploads and downloads over SFTP from the terminal, live metrics, an encrypted password vault, one-file backups and end-to-end encrypted sharing of hosts with a team. It is written in Java with JavaFX and runs on Linux (developed and tested on Ubuntu with GNOME); macOS builds from source but is not tested on a real Mac yet.
+> Lemuri is a free, open source (MIT) desktop SSH console for the servers and VPS you manage: a tree of hosts, tabs and split terminals, uploads and downloads over SFTP from the terminal, live metrics, an encrypted password vault, one-file backups and end-to-end encrypted sharing of hosts with a team. It is native, written in C++ with Qt 6, and runs on Linux (developed and tested on Ubuntu with GNOME); macOS builds from source but is not tested on a real Mac yet.
 
-There are no ready-made packages yet: Lemuri builds and runs from source with JDK 21 and `unzip` installed:
+A .deb package for Ubuntu 24.04 or newer and Debian is attached to every release on GitHub (https://github.com/getlemuri/lemuri/releases/latest), with a .tar.gz for other distributions. Install it with:
+
+```
+sudo apt install ./lemuri_*_amd64.deb
+```
+
+Updates are offered and installed from the app; every package is signed and checked before installing. To build from source (Qt 6.4+, libvterm, libssh, libargon2, OpenSSL, CMake, Ninja):
 
 ```
 git clone https://github.com/getlemuri/lemuri
 cd lemuri
-./mvnw javafx:run
+cmake -S . -B build -G Ninja && cmake --build build
+build/lemuri
 ```
-
-Maven is not needed: the wrapper downloads it the first time.
 
 ## Main features
 
 - Host tree: nested folders you drag around, a mark showing which servers answer on their SSH port, a badge with the open sessions. Double-click opens the shell.
 - Tabs and split panes: one tab per session, split a terminal side by side or one above the other, on the same host or another; sync sends what you type to every pane.
-- Files: drag files or folders onto a terminal to upload them to the shell's current folder; after `ls`, right-click a name to download it. Overwrites are shown before anything moves; files are written under a temporary name until complete; symbolic links are not followed.
+- Files: drag files or folders onto a terminal to upload them to the shell's current folder (when the shell announces it with OSC 7, or with interactive mode on; otherwise the home folder); after `ls`, right-click a name to download it. Overwrites are shown before anything moves; files are written under a temporary name until complete; symbolic links are not followed.
 - Live metrics: CPU, memory, disks, uptime, pending updates (and how many are security fixes) and whether a reboot is required, read over SSH with no agent on the server.
 - Ghost mode: the window becomes a see-through terminal on the desktop, anchored to a screen edge; F11 hides and shows it.
 - Backup: one encrypted file with hosts, vault and selected SSH keys; importing never overwrites `~/.ssh`.
 - Import of `~/.ssh/config`, `ProxyJump` and keys included.
 - Jump hosts like `ssh -J`; every host key at every hop is checked against `known_hosts`, new ones confirmed by hand.
-- Clickable terminal: after `ls`, double-click a folder to enter it or a text file to open it in `nano`.
+- Clickable terminal (interactive mode, off by default): after `ls`, double-click a folder to enter it or a text file to open it in `nano`.
 - Encrypted vault: passwords encrypted with AES-GCM under a key derived from the master password with Argon2id; key passphrases are never saved.
-- Local shell tab next to the servers, and a command line launcher: `lemuri -s db-01` opens a host's shell in the current terminal.
+- Local shell tab next to the servers.
+- Data in `~/.lemuri`, in the same format as the first version of Lemuri.
 - Team sharing: send a host with its credentials to a teammate, sealed for them and signed by you, with no server or account. Keys are exchanged once (fingerprint compared by voice, or a 6-digit code on the same network). On a local network hosts go directly between PCs (UDP 47820 for discovery on private addresses, TCP 47821); otherwise as an encrypted text sent by email or chat.
 
 ## Links
