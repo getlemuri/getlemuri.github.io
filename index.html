@@ -200,8 +200,9 @@
     padding: 18px 20px; font-family: var(--mono); font-size: 14.5px; line-height: 1.8; overflow-x: auto;
   }
   .terminal .p { color: var(--ok); user-select: none; }
-  .facts { width: 100%; border-collapse: collapse; margin-top: 8px; }
-  .facts td { padding: 12px 0; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .facts { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; line-height: 1.5; }
+  .facts code { font-size: 12.5px; }
+  .facts td { padding: 10px 0; border-bottom: 1px solid var(--border); vertical-align: top; }
   .facts td:first-child { font-weight: 600; width: 40%; padding-right: 16px; }
   .facts td:last-child { color: var(--muted); }
 
@@ -446,7 +447,7 @@
           <tr><td>Linux</td><td>Ubuntu 24.04 or newer, Debian and their derivatives (.deb). Developed and tested on Ubuntu with GNOME. A .tar.gz is in every release for other distributions.</td></tr>
           <tr><td>macOS</td><td>Builds from source, but not tested on a real Mac yet.</td></tr>
           <tr><td>Data</td><td>Your hosts, vault and settings stay in <code>~/.lemuri</code>, in the same format as the first version of Lemuri, so updating keeps them.</td></tr>
-          <tr><td>Signed</td><td>Packages are signed, and the app installs an update only if the signature matches one of these keys (<code>ssh-keygen -lf</code>):<br>
+          <tr><td>Signed</td><td>Packages are signed, and the app installs an update only if the signature matches one of these keys (<code style="white-space:nowrap">ssh-keygen -lf</code>):<br>
             <code>SHA256:j0T3yuGBNy1IjFQzKAhJYvHk3sdBVy2/VPTR9D2khp4</code> releases<br>
             <code>SHA256:hYz6UYHfOhpx57c5oNKlsmNrnhZu6hitDVzi0Hxk1qo</code> backup, kept offline<br>
             Release tags: <code>SHA256:+EFiAMVsA/VCzYGuPjboAI5GvWm6QF+ugcAelcScT3A</code></td></tr>
