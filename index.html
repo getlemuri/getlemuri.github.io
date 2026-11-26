@@ -111,7 +111,7 @@
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
   }
-  header.bar .wrap { display: flex; align-items: center; gap: 24px; height: 60px; }
+  header.bar .wrap { max-width: 1340px; display: flex; align-items: center; gap: 24px; height: 60px; }
   .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; color: var(--text); }
   .brand:hover { text-decoration: none; }
   .brand img { width: 48px; height: 48px; }
@@ -120,7 +120,7 @@
   nav a:hover { color: var(--text); text-decoration: none; }
 
   /* ── Opening ── */
-  .hero { position: relative; overflow: hidden; padding: 56px 0 24px; text-align: center; }
+  .hero { position: relative; overflow: hidden; padding: 36px 0 24px; text-align: center; }
   #swirl { display: block; margin: 0 auto; width: 340px; height: 340px; max-width: 80vw; max-height: 80vw; }
   h1 {
     margin: 8px 0 12px;
@@ -151,7 +151,13 @@
   .window img { display: block; width: 100%; height: auto; }
 
   /* ── Gallery: the screenshots on a ring that turns; the one in front opens the viewer ── */
-  .film { margin: 40px auto 0; max-width: 1100px; }
+  /* The opening: the pitch on the left, the video on the right, both in view as the page opens. */
+  .hero .wrap.top { max-width: 1340px; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: center; text-align: left; }
+  .hero .pitch #swirl { width: 150px; height: 150px; margin: 0 0 4px -14px; }
+  .hero .pitch h1 { font-size: clamp(34px, 4vw, 54px); }
+  .hero .pitch .subtitle { margin: 0 0 24px; font-size: 17px; }
+  .hero .pitch .actions { justify-content: flex-start; }
+  .film { margin: 0; }
   .film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 14px; background: #000; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(79, 179, 255, 0.35), 0 0 90px rgba(79, 179, 255, 0.18); }
   .film figcaption { margin-top: 12px; color: var(--muted); font-size: 14px; }
   .carousel { padding-top: 40px; overflow: hidden; }
@@ -277,6 +283,12 @@
     section { padding: 52px 0; }
     .hero { padding-top: 32px; }
   }
+  @media (max-width: 1000px) {
+    .hero .wrap.top { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+    .hero .pitch #swirl { margin: 0 auto 4px; }
+    .hero .pitch .subtitle { margin: 0 auto 24px; }
+    .hero .pitch .actions { justify-content: center; }
+  }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .btn, .carousel .ring, .carousel .slide { transition: none; }
@@ -307,7 +319,8 @@
 
 <main>
   <div class="hero">
-    <div class="wrap">
+    <div class="wrap top">
+      <div class="pitch">
       <canvas id="swirl" width="680" height="680" aria-hidden="true"></canvas>
       <h1>Every server.<br><span class="water">One console.</span></h1>
       <p class="subtitle">Lemuri is a free, open-source, lightweight desktop SSH client for managing servers and VPS, featuring host trees, split terminals, SFTP transfers, live metrics, an encrypted vault, backups, and secure team sharing.</p>
@@ -322,6 +335,7 @@
         </a>
       </div>
       <p class="download-note" id="download-note">Free and open source · MIT license · Linux (.deb)</p>
+      </div>
       <figure class="film" id="video">
         <video controls preload="none" playsinline poster="video/lemuri-poster.jpg" width="1920" height="1080" aria-label="Lemuri in 90 seconds">
           <source src="video/lemuri.webm" type="video/webm">
