@@ -153,11 +153,12 @@
   /* ── Gallery: the screenshots on a ring that turns; the one in front opens the viewer ── */
   /* The opening: icon and title, the video, the buttons; all in view as the page opens. */
   .hero .wrap.top { max-width: 1340px; }
-  .hero .pitch #swirl { width: 90px; height: 90px; }
-  .hero .pitch h1 { margin: 0 0 8px; font-size: clamp(22px, 5.2vw, 54px); white-space: nowrap; }
-  .hero .pitch .subtitle { max-width: 1080px; margin: 0 auto; font-size: 17px; }
+  .hero .headline { display: flex; align-items: center; justify-content: center; gap: 6px; }
+  .hero .headline #swirl { flex: none; width: clamp(64px, 11vw, 150px); height: clamp(64px, 11vw, 150px); margin: 0; }
+  .hero .pitch h1 { margin: 0; font-size: clamp(22px, 5.2vw, 54px); white-space: nowrap; }
+  .hero .cta .subtitle { max-width: 1080px; margin: 0 auto 20px; font-size: 17px; }
   /* As wide as the screen's height lets it be, so the buttons stay in view too. */
-  .film { margin: 20px auto 0; width: min(100%, 1100px, calc((100vh - 420px) * 16 / 9)); min-width: min(100%, 560px); }
+  .film { margin: 12px auto 0; width: min(100%, 1100px, calc((100vh - 470px) * 16 / 9)); min-width: min(100%, 560px); }
   .hero .cta { margin-top: 26px; }
   .hero .cta .download-note { margin-top: 8px; }
   .film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 14px; background: #000; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(79, 179, 255, 0.35), 0 0 90px rgba(79, 179, 255, 0.18); }
@@ -316,9 +317,10 @@
   <div class="hero">
     <div class="wrap top">
       <div class="pitch">
+      <div class="headline">
       <canvas id="swirl" width="680" height="680" aria-hidden="true"></canvas>
       <h1>Every server. <span class="water">One console.</span></h1>
-      <p class="subtitle">Lemuri is a free, open-source, lightweight desktop SSH client for managing servers and VPS, featuring host trees, split terminals, SFTP transfers, live metrics, an encrypted vault, backups, and secure team sharing.</p>
+      </div>
       </div>
       <figure class="film" id="video">
         <video controls preload="none" playsinline poster="video/lemuri-poster.jpg" width="1920" height="1080" aria-label="Lemuri in 90 seconds, with made-up servers" title="Lemuri in 90 seconds, with made-up servers">
@@ -328,6 +330,7 @@
         </video>
       </figure>
       <div class="cta">
+        <p class="subtitle">Lemuri is a free, open-source, lightweight desktop SSH client for managing servers and VPS, featuring host trees, split terminals, SFTP transfers, live metrics, an encrypted vault, backups, and secure team sharing.</p>
         <div class="actions">
           <a class="btn primary" id="get" href="#download">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
