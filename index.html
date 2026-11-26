@@ -156,7 +156,7 @@
   .hero .headline { display: flex; align-items: center; justify-content: center; gap: 6px; }
   .hero .headline #swirl { flex: none; width: clamp(64px, 11vw, 150px); height: clamp(64px, 11vw, 150px); margin: 0; }
   .hero .pitch h1 { margin: 0; font-size: clamp(22px, 5.2vw, 54px); white-space: nowrap; }
-  .hero .cta .subtitle { max-width: 1080px; margin: 0 auto 20px; font-size: 17px; }
+  .hero .cta .subtitle { max-width: max(min(100%, 1100px, calc((100vh - 470px) * 16 / 9)), min(100%, 560px)); margin: 0 auto 20px; font-size: 17px; text-align: justify; text-align-last: center; hyphens: auto; }
   /* As wide as the screen's height lets it be, so the buttons stay in view too. */
   .film { margin: 12px auto 0; width: min(100%, 1100px, calc((100vh - 470px) * 16 / 9)); min-width: min(100%, 560px); }
   .hero .cta { margin-top: 26px; }
