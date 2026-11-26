@@ -120,7 +120,7 @@
   nav a:hover { color: var(--text); text-decoration: none; }
 
   /* ── Opening ── */
-  .hero { position: relative; overflow: hidden; padding: 36px 0 24px; text-align: center; }
+  .hero { position: relative; overflow: hidden; padding: 24px 0 24px; text-align: center; }
   #swirl { display: block; margin: 0 auto; width: 340px; height: 340px; max-width: 80vw; max-height: 80vw; }
   h1 {
     margin: 8px 0 12px;
@@ -151,15 +151,16 @@
   .window img { display: block; width: 100%; height: auto; }
 
   /* ── Gallery: the screenshots on a ring that turns; the one in front opens the viewer ── */
-  /* The opening: the pitch on the left, the video on the right, both in view as the page opens. */
-  .hero .wrap.top { max-width: 1340px; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 28px 48px; align-items: center; text-align: left; }
-  .hero .pitch #swirl { width: 150px; height: 150px; margin: 0 0 4px -14px; }
-  .hero .pitch h1 { font-size: clamp(34px, 4vw, 54px); }
-  .hero .pitch .subtitle { margin: 0; font-size: 17px; }
-  .hero .cta { grid-column: 1 / -1; text-align: center; }
-  .film { margin: 0; }
+  /* The opening: icon and title, the video, the buttons; all in view as the page opens. */
+  .hero .wrap.top { max-width: 1340px; }
+  .hero .pitch #swirl { width: 90px; height: 90px; }
+  .hero .pitch h1 { margin: 0 0 8px; font-size: clamp(22px, 5.2vw, 54px); white-space: nowrap; }
+  .hero .pitch .subtitle { max-width: 1080px; margin: 0 auto; font-size: 17px; }
+  /* As wide as the screen's height lets it be, so the buttons stay in view too. */
+  .film { margin: 20px auto 0; width: min(100%, 1100px, calc((100vh - 420px) * 16 / 9)); min-width: min(100%, 560px); }
+  .hero .cta { margin-top: 26px; }
+  .hero .cta .download-note { margin-top: 8px; }
   .film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 14px; background: #000; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(79, 179, 255, 0.35), 0 0 90px rgba(79, 179, 255, 0.18); }
-  .film figcaption { margin-top: 12px; color: var(--muted); font-size: 14px; }
   .carousel { padding-top: 40px; overflow: hidden; }
   .carousel .stage { position: relative; height: calc(var(--slide-h) + 60px); perspective: 1500px; perspective-origin: 50% 30%; margin-top: 10px; touch-action: pan-y; }
   .carousel .ring { position: absolute; left: 50%; top: -40px; width: 0; height: 0; transform-style: preserve-3d; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
@@ -283,11 +284,6 @@
     section { padding: 52px 0; }
     .hero { padding-top: 32px; }
   }
-  @media (max-width: 1000px) {
-    .hero .wrap.top { grid-template-columns: 1fr; gap: 28px; text-align: center; }
-    .hero .pitch #swirl { margin: 0 auto 4px; }
-    .hero .pitch .subtitle { margin: 0 auto; }
-  }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .btn, .carousel .ring, .carousel .slide { transition: none; }
@@ -321,16 +317,15 @@
     <div class="wrap top">
       <div class="pitch">
       <canvas id="swirl" width="680" height="680" aria-hidden="true"></canvas>
-      <h1>Every server.<br><span class="water">One console.</span></h1>
+      <h1>Every server. <span class="water">One console.</span></h1>
       <p class="subtitle">Lemuri is a free, open-source, lightweight desktop SSH client for managing servers and VPS, featuring host trees, split terminals, SFTP transfers, live metrics, an encrypted vault, backups, and secure team sharing.</p>
       </div>
       <figure class="film" id="video">
-        <video controls preload="none" playsinline poster="video/lemuri-poster.jpg" width="1920" height="1080" aria-label="Lemuri in 90 seconds">
+        <video controls preload="none" playsinline poster="video/lemuri-poster.jpg" width="1920" height="1080" aria-label="Lemuri in 90 seconds, with made-up servers" title="Lemuri in 90 seconds, with made-up servers">
           <source src="video/lemuri.webm" type="video/webm">
           <source src="video/lemuri.mp4" type="video/mp4">
           <a href="video/lemuri.mp4">Watch the video (MP4)</a>
         </video>
-        <figcaption>Lemuri in 90 seconds, with made-up servers.</figcaption>
       </figure>
       <div class="cta">
         <div class="actions">
