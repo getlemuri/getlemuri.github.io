@@ -3,11 +3,59 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lemuri, the SSH console for your VPS</title>
-<meta name="description" content="Lemuri is a free, open-source, lightweight desktop SSH client for managing servers and VPS, featuring host trees, split terminals, SFTP transfers, live metrics, an encrypted vault, backups, and secure team sharing.">
-<meta property="og:title" content="Lemuri, the SSH console for your VPS">
-<meta property="og:description" content="Lemuri is a free, open-source, lightweight desktop SSH client for managing servers and VPS, featuring host trees, split terminals, SFTP transfers, live metrics, an encrypted vault, backups, and secure team sharing.">
-<meta property="og:image" content="https://getlemuri.github.io/screenshot.png">
+<title>Lemuri: free, open-source SSH client for Linux servers and VPS</title>
+<meta name="description" content="Lemuri is a free, open-source SSH client for Linux: host tree, split terminals, SFTP transfers, live server metrics, an encrypted vault and team sharing.">
+<meta property="og:title" content="Lemuri: free, open-source SSH client for Linux servers and VPS">
+<meta property="og:description" content="Lemuri is a free, open-source SSH client for Linux: host tree, split terminals, SFTP transfers, live server metrics, an encrypted vault and team sharing.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getlemuri.github.io/">
+<meta property="og:site_name" content="Lemuri">
+<meta property="og:image" content="https://getlemuri.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Lemuri: the host tree next to a split SSH terminal">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lemuri: free, open-source SSH client for Linux servers and VPS">
+<meta name="twitter:description" content="Lemuri is a free, open-source SSH client for Linux: host tree, split terminals, SFTP transfers, live server metrics, an encrypted vault and team sharing.">
+<meta name="twitter:image" content="https://getlemuri.github.io/og.png">
+<meta name="twitter:image:alt" content="Lemuri: the host tree next to a split SSH terminal">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Lemuri",
+  "url": "https://getlemuri.github.io/",
+  "description": "Lemuri is a free, open-source SSH client for Linux: host tree, split terminals, SFTP transfers, live server metrics, an encrypted vault and team sharing.",
+  "applicationCategory": "DeveloperApplication",
+  "applicationSubCategory": "SSH client",
+  "operatingSystem": "Linux",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "license": "https://opensource.org/licenses/MIT",
+  "downloadUrl": "https://github.com/getlemuri/lemuri/releases/latest",
+  "installUrl": "https://github.com/getlemuri/lemuri/releases/latest",
+  "screenshot": "https://getlemuri.github.io/og.png",
+  "image": "https://getlemuri.github.io/logo.png",
+  "featureList": [
+    "Host tree with folders",
+    "Tabs and split terminals with synced typing",
+    "SFTP upload and download from the terminal",
+    "Live CPU, memory and disk metrics over SSH",
+    "Jump hosts (ssh -J) with host key checks",
+    "Encrypted password vault (AES-GCM, Argon2id)",
+    "Encrypted backup of hosts, vault and SSH keys",
+    "End-to-end encrypted sharing of hosts with a team",
+    "Ghost mode: a see-through terminal on the desktop",
+    "Signed automatic updates"
+  ],
+  "sameAs": [
+    "https://github.com/getlemuri/lemuri"
+  ]
+}
+</script>
 <link rel="canonical" href="https://getlemuri.github.io/">
 <link rel="icon" type="image/png" sizes="64x64" href="icon-64.png">
 <link rel="apple-touch-icon" href="icon-180.png">
@@ -230,7 +278,7 @@
 
 <header class="bar">
   <div class="wrap">
-    <a class="brand" href="#">
+    <a class="brand" href="/">
       <img src="logo.png" width="48" height="48" alt="">
       Lemuri
     </a>
@@ -240,7 +288,7 @@
       <a class="optional" href="#team">Team sharing</a>
       <a class="optional" href="#how">How to</a>
       <a href="#download">Get it</a>
-      <a class="link-github" href="#">GitHub</a>
+      <a class="link-github" href="https://github.com/getlemuri/lemuri">GitHub</a>
     </nav>
   </div>
 </header>
@@ -256,7 +304,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
           <span>Get Lemuri</span>
         </a>
-        <a class="btn link-github" href="#">
+        <a class="btn link-github" href="https://github.com/getlemuri/lemuri">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
           <span>Source on GitHub</span>
         </a>
@@ -272,18 +320,18 @@
     </div>
     <div class="stage">
       <div class="ring">
-          <button class="slide" type="button" data-src="shots/main.png" data-title="Every host, one tree" data-text="Folders on the left, tabs on top, two servers side by side in one tab. Click a host and you are in." aria-label="Every host, one tree"><img src="shots/main-card.png" alt="" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
-          <button class="slide" type="button" data-src="shots/sync.png" data-title="Type once, run everywhere" data-text="Split a tab and turn on sync: what you type reaches every part. The amber edge tells you they are all listening." aria-label="Type once, run everywhere"><img src="shots/sync-card.png" alt="" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
-          <button class="slide" type="button" data-src="shots/transfers.png" data-title="Upload and download from the terminal" data-text="Right-click a terminal to upload into the folder the shell is in; right-click a name listed by ls to download it. Progress and cancel are in the status bar." aria-label="Upload and download from the terminal"><img src="shots/transfers-card.png" alt="" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
-          <button class="slide" type="button" data-src="shots/ghost.jpg" data-title="Ghost mode" data-text="The console becomes a see-through panel on your desktop, like a conky widget: tabs, host tree and terminals, all still working, with a local shell one click away." aria-label="Ghost mode"><img src="shots/ghost-card.jpg" alt="" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
-          <button class="slide" type="button" data-src="shots/anchors.jpg" data-title="Anchors: stick it to an edge" data-text="Four buttons pin the ghost to the left, top, bottom or right of the screen, so it lives next to your browser. Press again to let it float." aria-label="Anchors: stick it to an edge"><img src="shots/anchors-card.jpg" alt="" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
-          <button class="slide" type="button" data-src="shots/share.jpg" data-title="Send a host, accept a host" data-text="On the left Alex sends db-01 to Sam, password included. On the right Sam sees who sent it, with the fingerprint, and chooses where it goes. Sealed for Sam, signed by Alex, no server in between." aria-label="Send a host, accept a host"><img src="shots/share-card.jpg" alt="" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
-          <button class="slide" type="button" data-src="shots/datacenter.png" data-title="The whole fleet at a glance" data-text="Status, system, folder, disk space and open sessions for every server, with a search box." aria-label="The whole fleet at a glance"><img src="shots/datacenter-card.png" alt="" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
-          <button class="slide" type="button" data-src="shots/summary.png" data-title="How is db-01 doing?" data-text="CPU, memory, disks and uptime, read over SSH, plus pending updates (security ones in red) and whether it wants a reboot. No agent to install on the server." aria-label="How is db-01 doing?"><img src="shots/summary-card.png" alt="" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
-          <button class="slide" type="button" data-src="shots/team.png" data-title="Hand over a server, not a password" data-text="Contacts with their fingerprints, hosts arriving sealed for you, PCs linked on the local network." aria-label="Hand over a server, not a password"><img src="shots/team-card.png" alt="" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
-          <button class="slide" type="button" data-src="shots/backup.png" data-title="New laptop? Bring everything" data-text="One encrypted file with hosts, vault and the SSH keys you tick. Import it on the other PC." aria-label="New laptop? Bring everything"><img src="shots/backup-card.png" alt="" class="whole" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
-          <button class="slide" type="button" data-src="shots/sshimport.png" data-title="Already have a ~/.ssh/config?" data-text="Tick what to import. Hosts already in the list and git services are left out for you." aria-label="Already have a ~/.ssh/config?"><img src="shots/sshimport-card.png" alt="" class="whole" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
-          <button class="slide" type="button" data-src="shots/splash.png" data-title="And yes, there is a lemur" data-text="It comes out of the vortex every time Lemuri starts. You can turn it off, but why would you?" aria-label="And yes, there is a lemur"><img src="shots/splash-card.png" alt="" class="whole" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
+          <button class="slide" type="button" data-src="shots/main.png" data-title="Every host, one tree" data-text="Folders on the left, tabs on top, two servers side by side in one tab. Click a host and you are in." aria-label="Every host, one tree"><img src="shots/main-card.png" alt="Lemuri screenshot: Every host, one tree" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
+          <button class="slide" type="button" data-src="shots/sync.png" data-title="Type once, run everywhere" data-text="Split a tab and turn on sync: what you type reaches every part. The amber edge tells you they are all listening." aria-label="Type once, run everywhere"><img src="shots/sync-card.png" alt="Lemuri screenshot: Type once, run everywhere" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
+          <button class="slide" type="button" data-src="shots/transfers.png" data-title="Upload and download from the terminal" data-text="Right-click a terminal to upload into the folder the shell is in; right-click a name listed by ls to download it. Progress and cancel are in the status bar." aria-label="Upload and download from the terminal"><img src="shots/transfers-card.png" alt="Lemuri screenshot: Upload and download from the terminal" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
+          <button class="slide" type="button" data-src="shots/ghost.jpg" data-title="Ghost mode" data-text="The console becomes a see-through panel on your desktop, like a conky widget: tabs, host tree and terminals, all still working, with a local shell one click away." aria-label="Ghost mode"><img src="shots/ghost-card.jpg" alt="Lemuri screenshot: Ghost mode" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
+          <button class="slide" type="button" data-src="shots/anchors.jpg" data-title="Anchors: stick it to an edge" data-text="Four buttons pin the ghost to the left, top, bottom or right of the screen, so it lives next to your browser. Press again to let it float." aria-label="Anchors: stick it to an edge"><img src="shots/anchors-card.jpg" alt="Lemuri screenshot: Anchors: stick it to an edge" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
+          <button class="slide" type="button" data-src="shots/share.jpg" data-title="Send a host, accept a host" data-text="On the left Alex sends db-01 to Sam, password included. On the right Sam sees who sent it, with the fingerprint, and chooses where it goes. Sealed for Sam, signed by Alex, no server in between." aria-label="Send a host, accept a host"><img src="shots/share-card.jpg" alt="Lemuri screenshot: Send a host, accept a host" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
+          <button class="slide" type="button" data-src="shots/datacenter.png" data-title="The whole fleet at a glance" data-text="Status, system, folder, disk space and open sessions for every server, with a search box." aria-label="The whole fleet at a glance"><img src="shots/datacenter-card.png" alt="Lemuri screenshot: The whole fleet at a glance" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
+          <button class="slide" type="button" data-src="shots/summary.png" data-title="How is db-01 doing?" data-text="CPU, memory, disks and uptime, read over SSH, plus pending updates (security ones in red) and whether it wants a reboot. No agent to install on the server." aria-label="How is db-01 doing?"><img src="shots/summary-card.png" alt="Lemuri screenshot: How is db-01 doing?" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
+          <button class="slide" type="button" data-src="shots/team.png" data-title="Hand over a server, not a password" data-text="Contacts with their fingerprints, hosts arriving sealed for you, PCs linked on the local network." aria-label="Hand over a server, not a password"><img src="shots/team-card.png" alt="Lemuri screenshot: Hand over a server, not a password" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
+          <button class="slide" type="button" data-src="shots/backup.png" data-title="New laptop? Bring everything" data-text="One encrypted file with hosts, vault and the SSH keys you tick. Import it on the other PC." aria-label="New laptop? Bring everything"><img src="shots/backup-card.png" alt="Lemuri screenshot: New laptop? Bring everything" class="whole" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
+          <button class="slide" type="button" data-src="shots/sshimport.png" data-title="Already have a ~/.ssh/config?" data-text="Tick what to import. Hosts already in the list and git services are left out for you." aria-label="Already have a ~/.ssh/config?"><img src="shots/sshimport-card.png" alt="Lemuri screenshot: Already have a ~/.ssh/config?" class="whole" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
+          <button class="slide" type="button" data-src="shots/splash.png" data-title="And yes, there is a lemur" data-text="It comes out of the vortex every time Lemuri starts. You can turn it off, but why would you?" aria-label="And yes, there is a lemur"><img src="shots/splash-card.png" alt="Lemuri screenshot: And yes, there is a lemur" class="whole" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
       </div>
       <div class="arrows"><button class="prev" type="button" aria-label="Previous">‹</button><button class="next" type="button" aria-label="Next">›</button></div>
     </div>
@@ -427,7 +475,7 @@
       <p class="intro">Free and open source, MIT licensed. A package for Ubuntu and Debian, about 1.3&nbsp;MB, that keeps itself up to date.</p>
       <div class="split">
         <div>
-          <p style="margin:0 0 14px"><a class="btn primary link-release" href="#">
+          <p style="margin:0 0 14px"><a class="btn primary link-release" href="https://github.com/getlemuri/lemuri/releases/latest">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
             <span>Download the .deb</span></a></p>
           <p style="margin:0 0 10px;color:var(--muted)">Then install it, with the libraries it needs:</p>
@@ -471,20 +519,11 @@
 <footer>
   <div class="wrap">
     <span>Lemuri · MIT license</span>
-    <span><a class="link-github" href="#">GitHub</a> · <a class="link-security" href="#">Report a security issue</a></span>
+    <span><a class="link-github" href="https://github.com/getlemuri/lemuri">GitHub</a> · <a class="link-security" href="https://github.com/getlemuri/lemuri/security/advisories/new">Report a security issue</a></span>
   </div>
 </footer>
 
 <script>
-  // The GitHub repository: to change once it is published.
-  const REPO = "getlemuri/lemuri";
-
-  const github = "https://github.com/" + REPO;
-  document.querySelectorAll(".link-github").forEach(a => a.href = github);
-  document.querySelectorAll(".link-security").forEach(a => a.href = github + "/security/advisories/new");
-  document.querySelectorAll(".url-repo").forEach(s => s.textContent = github);
-  document.querySelectorAll(".link-release").forEach(a => a.href = github + "/releases/latest");
-
   // The tour viewer: the screenshot fits the window; a click zooms where you clicked (and back), the wheel
   // zooms too, dragging moves it, the arrows go to the next one, Esc or a click on the dark closes it.
   (() => {
