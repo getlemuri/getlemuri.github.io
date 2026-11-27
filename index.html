@@ -826,6 +826,19 @@
     }
     requestAnimationFrame(turn);
   })();
+
+  // The version under the button comes from the latest release on GitHub, so it is right after every release
+  // without touching the site; when GitHub cannot be reached the note stays as it is.
+  (() => {
+    const note = document.getElementById("download-note");
+    fetch("https://api.github.com/repos/getlemuri/lemuri/releases/latest", { headers: { Accept: "application/vnd.github+json" } })
+      .then(r => r.ok ? r.json() : null)
+      .then(release => {
+        const tag = release && release.tag_name;
+        if (/^v\d+\.\d+\.\d+$/.test(tag || "")) note.textContent = `Version ${tag.slice(1)} · ${note.textContent}`;
+      })
+      .catch(() => {});
+  })();
 </script>
 </body>
 </html>
