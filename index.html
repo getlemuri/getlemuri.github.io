@@ -250,6 +250,7 @@
 
   /* ── Team ── */
   .team { background: linear-gradient(180deg, var(--bg), var(--bg-2) 30%, var(--bg-2) 70%, var(--bg)); }
+  .install { max-width: 820px; }
   .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: start; }
   .steps { list-style: none; padding: 0; margin: 0; counter-reset: step; }
   .steps li { position: relative; padding: 0 0 22px 48px; color: var(--muted); }
@@ -268,11 +269,6 @@
     padding: 18px 20px; font-family: var(--mono); font-size: 14.5px; line-height: 1.8; overflow-x: auto; overflow-wrap: anywhere;
   }
   .terminal .p { color: var(--ok); user-select: none; }
-  .facts { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; line-height: 1.5; }
-  .facts code { font-size: 12.5px; }
-  .facts td { padding: 10px 0; border-bottom: 1px solid var(--border); vertical-align: top; }
-  .facts td:first-child { font-weight: 600; width: 40%; padding-right: 16px; }
-  .facts td:last-child { color: var(--muted); }
 
   footer { border-top: 1px solid var(--border); padding: 32px 0; color: var(--muted); font-size: 14px; }
   footer .wrap { display: flex; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
@@ -522,7 +518,7 @@
     <div class="wrap">
       <h2>Get Lemuri</h2>
       <p class="intro">Free and open source, MIT licensed. A package of about 1.3&nbsp;MB for Ubuntu and Debian: from the PPA (Ubuntu) or the Debian repository, updated by apt, or as a .deb that keeps itself up to date.</p>
-      <div class="split">
+      <div class="install">
         <div>
           <p style="margin:0 0 10px;color:var(--muted)">On Ubuntu 24.04, 26.04 or 26.10, from the PPA; updates come with the others from apt:</p>
           <div class="terminal">
@@ -552,15 +548,6 @@
             <div><span class="p">$ </span>build/lemuri</div>
           </div>
         </div>
-        <table class="facts">
-          <tr><td>Linux</td><td>Ubuntu 24.04 or newer, Debian and their derivatives (PPA for the supported Ubuntu releases, a repository for Debian 12 and 13 on amd64 and arm64, .deb for the rest). Developed and tested on Ubuntu with GNOME. A .tar.gz is in every release for other distributions.</td></tr>
-          <tr><td>macOS</td><td>Builds from source, but not tested on a real Mac yet.</td></tr>
-          <tr><td>Data</td><td>Your hosts, vault and settings stay in <code>~/.lemuri</code>, in the same format as the first version of Lemuri, so updating keeps them.</td></tr>
-          <tr><td>Signed</td><td>Packages are signed, and the app installs an update only if the signature matches one of these keys (<code style="white-space:nowrap">ssh-keygen -lf</code>):<br>
-            <code>SHA256:j0T3yuGBNy1IjFQzKAhJYvHk3sdBVy2/VPTR9D2khp4</code> releases<br>
-            <code>SHA256:hYz6UYHfOhpx57c5oNKlsmNrnhZu6hitDVzi0Hxk1qo</code> backup, kept offline<br>
-            Release tags: <code>SHA256:+EFiAMVsA/VCzYGuPjboAI5GvWm6QF+ugcAelcScT3A</code></td></tr>
-        </table>
       </div>
     </div>
   </section>
