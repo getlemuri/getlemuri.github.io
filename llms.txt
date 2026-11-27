@@ -9,7 +9,15 @@ sudo add-apt-repository ppa:al-redai/lemuri
 sudo apt install lemuri
 ```
 
-For Debian and other Ubuntu releases, a .deb package is attached to every release on GitHub (https://github.com/getlemuri/lemuri/releases/latest), with a .tar.gz for other distributions. Install it with:
+On Debian 13 it installs from the Lemuri repository, built by the openSUSE Build Service for amd64 and arm64 (on Debian 12, write Debian_12 instead of Debian_13):
+
+```
+curl -fsSL https://download.opensuse.org/repositories/home:alredai:lemuri/Debian_13/Release.key | gpg --dearmor | sudo tee /etc/apt/keyrings/lemuri.gpg >/dev/null
+echo "deb [signed-by=/etc/apt/keyrings/lemuri.gpg] https://download.opensuse.org/repositories/home:/alredai:/lemuri/Debian_13/ /" | sudo tee /etc/apt/sources.list.d/lemuri.list
+sudo apt update && sudo apt install lemuri
+```
+
+Elsewhere (other Ubuntu releases, derivatives), a .deb package is attached to every release on GitHub (https://github.com/getlemuri/lemuri/releases/latest), with a .tar.gz for other distributions. Install it with:
 
 ```
 sudo apt install ./lemuri_*_amd64.deb

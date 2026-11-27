@@ -250,7 +250,7 @@
 
   /* ── Team ── */
   .team { background: linear-gradient(180deg, var(--bg), var(--bg-2) 30%, var(--bg-2) 70%, var(--bg)); }
-  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: start; }
   .steps { list-style: none; padding: 0; margin: 0; counter-reset: step; }
   .steps li { position: relative; padding: 0 0 22px 48px; color: var(--muted); }
   .steps li strong { color: var(--text); display: block; margin-bottom: 2px; }
@@ -265,7 +265,7 @@
   /* ── Getting started ── */
   .terminal {
     background: #101412; border: 1px solid var(--border); border-radius: 12px;
-    padding: 18px 20px; font-family: var(--mono); font-size: 14.5px; line-height: 1.8; overflow-x: auto;
+    padding: 18px 20px; font-family: var(--mono); font-size: 14.5px; line-height: 1.8; overflow-x: auto; overflow-wrap: anywhere;
   }
   .terminal .p { color: var(--ok); user-select: none; }
   .facts { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; line-height: 1.5; }
@@ -279,7 +279,7 @@
 
   @media (max-width: 760px) {
     nav a.optional { display: none; }
-    .split { grid-template-columns: 1fr; gap: 28px; }
+    .split { grid-template-columns: minmax(0, 1fr); gap: 28px; }
     .row { grid-template-columns: 1fr; gap: 20px; }
     .row:nth-child(even) > .window { order: 0; }
     section { padding: 52px 0; }
@@ -341,7 +341,7 @@
             <span>Source on GitHub</span>
           </a>
         </div>
-        <p class="download-note" id="download-note">Free and open source · MIT license · Linux (PPA or .deb)</p>
+        <p class="download-note" id="download-note">Free and open source · MIT license · Linux (apt or .deb)</p>
       </div>
     </div>
   </div>
@@ -521,7 +521,7 @@
   <section id="download">
     <div class="wrap">
       <h2>Get Lemuri</h2>
-      <p class="intro">Free and open source, MIT licensed. A package of about 1.3&nbsp;MB for Ubuntu and Debian: from the PPA, updated by apt, or as a .deb that keeps itself up to date.</p>
+      <p class="intro">Free and open source, MIT licensed. A package of about 1.3&nbsp;MB for Ubuntu and Debian: from the PPA (Ubuntu) or the Debian repository, updated by apt, or as a .deb that keeps itself up to date.</p>
       <div class="split">
         <div>
           <p style="margin:0 0 10px;color:var(--muted)">On Ubuntu 24.04, 26.04 or 26.10, from the PPA; updates come with the others from apt:</p>
@@ -529,7 +529,13 @@
             <div><span class="p">$ </span>sudo add-apt-repository ppa:al-redai/lemuri</div>
             <div><span class="p">$ </span>sudo apt install lemuri</div>
           </div>
-          <p style="margin:22px 0 10px;color:var(--muted)">On Debian and other Ubuntu releases, download the .deb, which updates itself from the app:</p>
+          <p style="margin:22px 0 10px;color:var(--muted)">On Debian 13, from the Lemuri repository (on Debian 12, write <code>Debian_12</code> instead of <code>Debian_13</code>):</p>
+          <div class="terminal">
+            <div><span class="p">$ </span>curl -fsSL https://download.opensuse.org/repositories/home:alredai:lemuri/Debian_13/Release.key | gpg --dearmor | sudo tee /etc/apt/keyrings/lemuri.gpg &gt;/dev/null</div>
+            <div><span class="p">$ </span>echo "deb [signed-by=/etc/apt/keyrings/lemuri.gpg] https://download.opensuse.org/repositories/home:/alredai:/lemuri/Debian_13/ /" | sudo tee /etc/apt/sources.list.d/lemuri.list</div>
+            <div><span class="p">$ </span>sudo apt update &amp;&amp; sudo apt install lemuri</div>
+          </div>
+          <p style="margin:22px 0 10px;color:var(--muted)">Elsewhere (other Ubuntu releases, derivatives), download the .deb, which updates itself from the app:</p>
           <p style="margin:0 0 14px"><a class="btn primary link-release" href="https://github.com/getlemuri/lemuri/releases/latest">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
             <span>Download the .deb</span></a></p>
@@ -547,7 +553,7 @@
           </div>
         </div>
         <table class="facts">
-          <tr><td>Linux</td><td>Ubuntu 24.04 or newer, Debian and their derivatives (PPA for the supported Ubuntu releases, .deb for the rest). Developed and tested on Ubuntu with GNOME. A .tar.gz is in every release for other distributions.</td></tr>
+          <tr><td>Linux</td><td>Ubuntu 24.04 or newer, Debian and their derivatives (PPA for the supported Ubuntu releases, a repository for Debian 12 and 13 on amd64 and arm64, .deb for the rest). Developed and tested on Ubuntu with GNOME. A .tar.gz is in every release for other distributions.</td></tr>
           <tr><td>macOS</td><td>Builds from source, but not tested on a real Mac yet.</td></tr>
           <tr><td>Data</td><td>Your hosts, vault and settings stay in <code>~/.lemuri</code>, in the same format as the first version of Lemuri, so updating keeps them.</td></tr>
           <tr><td>Signed</td><td>Packages are signed, and the app installs an update only if the signature matches one of these keys (<code style="white-space:nowrap">ssh-keygen -lf</code>):<br>
