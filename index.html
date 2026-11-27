@@ -80,14 +80,14 @@
     src: url("fonts/jetbrains-mono-latin.woff2") format("woff2");
   }
   :root {
-    --bg: #061424;
-    --bg-2: #0a1d33;
-    --surface: #0e2440;
-    --border: #1b3757;
-    --text: #e6f1fb;
-    --muted: #9db4cc;
-    --water: #7fd3ff;
-    --water-strong: #4fb3ff;
+    --bg: #0c0e0d;
+    --bg-2: #131816;
+    --surface: #1a201d;
+    --border: #2d3833;
+    --text: #e6e6e6;
+    --muted: #a3aca8;
+    --water: #7fdcb0;
+    --water-strong: #3fbf8a;
     --ok: #3ddc84;
     --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   }
@@ -107,7 +107,7 @@
   /* ── Bar ── */
   header.bar {
     position: sticky; top: 0; z-index: 10;
-    background: rgba(6, 20, 36, 0.82);
+    background: rgba(12, 14, 13, 0.82);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
   }
@@ -137,7 +137,7 @@
     transition: transform .15s, border-color .15s, background .15s;
   }
   .btn:hover { text-decoration: none; transform: translateY(-1px); border-color: var(--water-strong); }
-  .btn.primary { background: linear-gradient(180deg, #2f9cf0, #1b78c9); border-color: #3aa5f5; color: #fff; }
+  .btn.primary { background: linear-gradient(180deg, #3fbf8a, #2a9a6c); border-color: #4fd09a; color: #fff; }
   .btn svg { width: 18px; height: 18px; }
   .download-note { margin-top: 12px; color: var(--muted); font-size: 14px; }
   .note { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
@@ -146,7 +146,7 @@
   .window {
     border-radius: 12px; overflow: hidden;
     border: 1px solid var(--border);
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(127, 211, 255, 0.06), 0 0 120px rgba(79, 179, 255, 0.12);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(127, 220, 176, 0.06), 0 0 120px rgba(63, 191, 138, 0.12);
   }
   .window img { display: block; width: 100%; height: auto; }
 
@@ -161,24 +161,24 @@
   .film { margin: 12px auto 0; width: min(100%, 1100px, calc((100vh - 470px) * 16 / 9)); min-width: min(100%, 560px); }
   .hero .cta { margin-top: 26px; }
   .hero .cta .download-note { margin-top: 8px; }
-  .film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 14px; background: #000; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(79, 179, 255, 0.35), 0 0 90px rgba(79, 179, 255, 0.18); }
+  .film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 14px; background: #000; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(63, 191, 138, 0.35), 0 0 90px rgba(63, 191, 138, 0.18); }
   .carousel { padding-top: 40px; overflow: hidden; }
   .carousel .stage { position: relative; height: calc(var(--slide-h) + 60px); perspective: 1500px; perspective-origin: 50% 30%; margin-top: 10px; touch-action: pan-y; }
   .carousel .ring { position: absolute; left: 50%; top: -40px; width: 0; height: 0; transform-style: preserve-3d; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
   .carousel .slide {
     position: absolute; left: calc(var(--slide-w) / -2); top: 0; width: var(--slide-w); height: var(--slide-h);
     border: 0; padding: 0; border-radius: 14px; overflow: hidden; cursor: pointer; backface-visibility: hidden;
-    background: radial-gradient(circle at 50% 40%, #13263d, #0b1622);
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(127, 211, 255, 0.10);
+    background: radial-gradient(circle at 50% 40%, #1c2622, #0e1210);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(127, 220, 176, 0.10);
     transition: filter .6s, box-shadow .6s;
     filter: brightness(0.45) saturate(0.7);
   }
-  .carousel .slide.front { filter: none; cursor: zoom-in; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(79, 179, 255, 0.55), 0 0 90px rgba(79, 179, 255, 0.25); }
+  .carousel .slide.front { filter: none; cursor: zoom-in; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(63, 191, 138, 0.55), 0 0 90px rgba(63, 191, 138, 0.25); }
   .carousel .slide img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
   .carousel .slide img.whole { object-fit: contain; padding: 14px; }
   .carousel .slide .lens {
     position: absolute; right: 12px; bottom: 12px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px;
-    border-radius: 999px; font-size: 13px; font-weight: 600; background: rgba(6, 20, 36, 0.8); color: #fff; opacity: 0; transition: opacity .3s;
+    border-radius: 999px; font-size: 13px; font-weight: 600; background: rgba(12, 14, 13, 0.8); color: #fff; opacity: 0; transition: opacity .3s;
   }
   .carousel .slide.front .lens { opacity: 1; }
   .carousel .slide .lens svg { width: 15px; height: 15px; }
@@ -187,7 +187,7 @@
   .carousel .arrows { position: absolute; top: var(--middle, 50%); height: 0; left: 50%; transform: translateX(-50%); z-index: 2; width: min(100%, calc(var(--slide-w) + 136px)); display: flex; justify-content: space-between; align-items: center; pointer-events: none; padding: 0 4px; }
   .carousel .arrows button {
     pointer-events: auto; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--border); cursor: pointer;
-    background: rgba(14, 36, 64, 0.85); color: var(--text); font-size: 26px; line-height: 1; flex: none;
+    background: rgba(26, 32, 29, 0.85); color: var(--text); font-size: 26px; line-height: 1; flex: none;
   }
   .carousel .arrows button:hover { border-color: var(--water-strong); }
   .carousel .story { text-align: center; min-height: 86px; margin-top: 18px; }
@@ -198,7 +198,7 @@
   .carousel .dots button.active { background: var(--water); transform: scale(1.3); }
 
   /* ── Viewer ── */
-  .viewer { position: fixed; inset: 0; z-index: 50; display: none; background: rgba(2, 8, 16, 0.92); backdrop-filter: blur(6px); }
+  .viewer { position: fixed; inset: 0; z-index: 50; display: none; background: rgba(4, 6, 5, 0.92); backdrop-filter: blur(6px); }
   .viewer.open { display: grid; grid-template-rows: 1fr auto; }
   .viewer .frame { position: relative; overflow: hidden; touch-action: none; }
   .viewer .frame img {
@@ -211,14 +211,14 @@
   .viewer .caption strong { color: var(--text); }
   .viewer button {
     position: absolute; z-index: 2; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border);
-    background: rgba(14, 36, 64, 0.85); color: var(--text); font-size: 22px; line-height: 1; cursor: pointer;
+    background: rgba(26, 32, 29, 0.85); color: var(--text); font-size: 22px; line-height: 1; cursor: pointer;
   }
   .viewer button:hover { border-color: var(--water-strong); }
   .viewer .close { top: 14px; right: 14px; }
   .viewer .prev { left: 14px; top: 50%; transform: translateY(-50%); }
   .viewer .next { right: 14px; top: 50%; transform: translateY(-50%); }
   .viewer .help { position: absolute; left: 50%; top: 14px; transform: translateX(-50%); z-index: 2; font-size: 13px; color: var(--muted);
-    background: rgba(14, 36, 64, 0.8); padding: 5px 12px; border-radius: 999px; }
+    background: rgba(26, 32, 29, 0.8); padding: 5px 12px; border-radius: 999px; }
 
   /* ── Sections ── */
   section { padding: 72px 0; }
@@ -240,13 +240,13 @@
   }
   .card .icon {
     width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center;
-    background: rgba(79, 179, 255, 0.12); color: var(--water); margin-bottom: 14px;
+    background: rgba(63, 191, 138, 0.12); color: var(--water); margin-bottom: 14px;
   }
   .card .icon svg { width: 22px; height: 22px; }
   .card h3 { margin: 0 0 6px; font-size: 18px; }
   .card p { margin: 0; color: var(--muted); font-size: 15px; }
   code, .mono { font-family: var(--mono); font-size: 0.92em; }
-  code { background: rgba(127, 211, 255, 0.1); padding: 1px 6px; border-radius: 5px; color: var(--water); }
+  code { background: rgba(127, 220, 176, 0.1); padding: 1px 6px; border-radius: 5px; color: var(--water); }
 
   /* ── Team ── */
   .team { background: linear-gradient(180deg, var(--bg), var(--bg-2) 30%, var(--bg-2) 70%, var(--bg)); }
@@ -259,12 +259,12 @@
     position: absolute; left: 0; top: 0;
     width: 32px; height: 32px; border-radius: 50%;
     display: grid; place-items: center;
-    background: rgba(79, 179, 255, 0.14); color: var(--water); font-weight: 700; font-size: 15px;
+    background: rgba(63, 191, 138, 0.14); color: var(--water); font-weight: 700; font-size: 15px;
   }
 
   /* ── Getting started ── */
   .terminal {
-    background: #071a2e; border: 1px solid var(--border); border-radius: 12px;
+    background: #101412; border: 1px solid var(--border); border-radius: 12px;
     padding: 18px 20px; font-family: var(--mono); font-size: 14.5px; line-height: 1.8; overflow-x: auto;
   }
   .terminal .p { color: var(--ok); user-select: none; }
@@ -356,6 +356,8 @@
           <button class="slide" type="button" data-src="shots/main.png" data-title="Every host, one tree" data-text="Folders on the left, tabs on top, two servers side by side in one tab. Click a host and you are in." aria-label="Every host, one tree"><img src="shots/main-card.png" alt="Lemuri screenshot: Every host, one tree" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
           <button class="slide" type="button" data-src="shots/sync.png" data-title="Type once, run everywhere" data-text="Split a tab and turn on sync: what you type reaches every part. The amber edge tells you they are all listening." aria-label="Type once, run everywhere"><img src="shots/sync-card.png" alt="Lemuri screenshot: Type once, run everywhere" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
           <button class="slide" type="button" data-src="shots/transfers.png" data-title="Upload and download from the terminal" data-text="Right-click a terminal to upload into the folder the shell is in; right-click a name listed by ls to download it. Progress and cancel are in the status bar." aria-label="Upload and download from the terminal"><img src="shots/transfers-card.png" alt="Lemuri screenshot: Upload and download from the terminal" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
+          <button class="slide" type="button" data-src="shots/files.png" data-title="Your files next to the server" data-text="Click the folder above a terminal: this computer on the left, the server on the right, like a file manager. Double-click or drag to copy across; click again for the shell." aria-label="Your files next to the server"><img src="shots/files-card.png" alt="Lemuri screenshot: Your files next to the server" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
+          <button class="slide" type="button" data-src="shots/launch.png" data-title="Four servers, one click" data-text="Launch groups open your servers split in one tab, four to a tab as a grid. The clock button (or Ctrl+Shift+O) also lists the last five servers you started." aria-label="Four servers, one click"><img src="shots/launch-card.png" alt="Lemuri screenshot: Four servers, one click" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
           <button class="slide" type="button" data-src="shots/ghost.jpg" data-title="Ghost mode" data-text="The console becomes a see-through panel on your desktop, like a conky widget: tabs, host tree and terminals, all still working, with a local shell one click away." aria-label="Ghost mode"><img src="shots/ghost-card.jpg" alt="Lemuri screenshot: Ghost mode" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
           <button class="slide" type="button" data-src="shots/anchors.jpg" data-title="Anchors: stick it to an edge" data-text="Four buttons pin the ghost to the left, top, bottom or right of the screen, so it lives next to your browser. Press again to let it float." aria-label="Anchors: stick it to an edge"><img src="shots/anchors-card.jpg" alt="Lemuri screenshot: Anchors: stick it to an edge" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
           <button class="slide" type="button" data-src="shots/share.jpg" data-title="Send a host, accept a host" data-text="On the left Alex sends db-01 to Sam, password included. On the right Sam sees who sent it, with the fingerprint, and chooses where it goes. Sealed for Sam, signed by Alex, no server in between." aria-label="Send a host, accept a host"><img src="shots/share-card.jpg" alt="Lemuri screenshot: Send a host, accept a host" loading="lazy"><span class="lens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg> Zoom</span></button>
@@ -401,6 +403,20 @@
           </div>
         </div>
         <div class="row">
+          <div class="window"><img src="shots/files-card.png" width="1040" height="650" loading="lazy" alt="The files view: this computer on the left, the server on the right"></div>
+          <div>
+            <h3>Files side by side, like AnyDesk</h3>
+            <p>The folder icon in the band of a server terminal swaps the shell for two panes: your computer on the left, the server on the right, starting where the shell is. Double-click a file or drag it across to copy it; new folder, rename and delete on both sides (locally to the trash). The same icon brings the terminal back.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="window"><img src="shots/launch-card.png" width="1040" height="650" loading="lazy" alt="Four servers in a grid, with the menu of recent servers and launch groups"></div>
+          <div>
+            <h3>Launch groups and recent servers</h3>
+            <p>Name a group of servers once, from any folder, and open them all split in one tab: two side by side, three with one large, four as a grid, more in more tabs. Or right-click a folder and choose <em>Open all, split</em>. The clock button and <kbd>Ctrl+Shift+O</kbd> list the last five servers you started.</p>
+          </div>
+        </div>
+        <div class="row">
           <div class="window"><img src="shots/summary-card.png" width="1040" height="650" loading="lazy" alt="The summary of db-01: CPU, memory, disks, uptime, pending updates and reboot"></div>
           <div>
             <h3>Live metrics, updates, reboots</h3>
@@ -411,7 +427,7 @@
           <div class="window"><img src="shots/ghost-card.jpg" width="1040" height="585" loading="lazy" alt="Ghost mode: the console as a see-through panel on the desktop"></div>
           <div>
             <h3>Ghost mode</h3>
-            <p>Turn the window into a see-through terminal on your desktop, like a conky widget. Stick it to any edge of the screen with the anchor buttons and drag its inner edge to make it taller or wider; F11 hides it and brings it back.</p>
+            <p>Turn the window into a see-through terminal on your desktop, like a conky widget. Stick it to any edge of the screen with the anchor buttons and drag its inner edge to make it taller or wider; F11 hides it and brings it back. The files view and the Team page work there too.</p>
           </div>
         </div>
         <div class="row">
@@ -755,8 +771,8 @@
       g.setTransform(S, 0, 0, S, 0, 0);
       g.clearRect(0, 0, L, L);
       const disc = g.createRadialGradient(c, c, 0, c, c, L / 2);
-      disc.addColorStop(0, "#0e3a63"); disc.addColorStop(0.55, "#082743");
-      disc.addColorStop(0.85, "rgba(6,26,46,0.85)"); disc.addColorStop(1, "rgba(6,26,46,0)");
+      disc.addColorStop(0, "#1f4a3a"); disc.addColorStop(0.55, "#12261d");
+      disc.addColorStop(0.85, "rgba(16, 22, 19,0.85)"); disc.addColorStop(1, "rgba(16, 22, 19,0)");
       g.fillStyle = disc; g.beginPath(); g.arc(c, c, L / 2, 0, Math.PI * 2); g.fill();
 
       // First the pull, then the swirl calms down and keeps turning.
@@ -773,7 +789,7 @@
           const s = i / 60, r = (11 + 155 * s * s) * squeeze, a = phase - s * 4.2;
           const x = c + Math.cos(a) * r, y = c + Math.sin(a) * r;
           if (i > 1) {
-            g.strokeStyle = rgba("#7fd3ff", alpha * 0.55 * (1 - s) + 0.04 * alpha);
+            g.strokeStyle = rgba("#7fdcb0", alpha * 0.55 * (1 - s) + 0.04 * alpha);
             g.lineWidth = 1 + 4 * (1 - s);
             g.beginPath(); g.moveTo(px, py); g.lineTo(x, y); g.stroke();
           }
@@ -784,19 +800,19 @@
         let r = d.r - (t * 48 * d.v) % 150; if (r < 10) r += 150;
         const a = d.a + t * (2.5 + 205 / r) * d.v, rr = r * squeeze;
         const dotSize = 1 + 2 * (r / 165);
-        g.fillStyle = rgba("#bfe6ff", Math.max(alpha, 0.35) * (0.25 + 0.55 * (1 - r / 165)));
+        g.fillStyle = rgba("#c8f0dc", Math.max(alpha, 0.35) * (0.25 + 0.55 * (1 - r / 165)));
         g.beginPath(); g.arc(c + Math.cos(a) * rr, c + Math.sin(a) * rr, dotSize / 2, 0, Math.PI * 2); g.fill();
       }
       for (let k = 0; k < 3; k++) {
         const s = ((t - 1.1 - k * 0.25) / 1.1);
         if (s <= 0 || s >= 1) continue;
         const r = 32 + 134 * s;
-        g.strokeStyle = rgba("#7fd3ff", 0.5 * (1 - s)); g.lineWidth = 2 * (1 - s) + 0.5;
+        g.strokeStyle = rgba("#7fdcb0", 0.5 * (1 - s)); g.lineWidth = 2 * (1 - s) + 0.5;
         g.beginPath(); g.arc(c, c, r, 0, Math.PI * 2); g.stroke();
       }
       const light = smooth((t - 0.6) / 0.6) * (1 - 0.6 * smooth((t - 1.8) / 0.6));
       const glow = g.createRadialGradient(c, c, 0, c, c, 72);
-      glow.addColorStop(0, rgba("#bfe6ff", 0.85 * light)); glow.addColorStop(1, "rgba(79,179,255,0)");
+      glow.addColorStop(0, rgba("#c8f0dc", 0.85 * light)); glow.addColorStop(1, "rgba(63, 191, 138,0)");
       g.fillStyle = glow; g.beginPath(); g.arc(c, c, 72, 0, Math.PI * 2); g.fill();
 
       // The logo comes out turning, with a small bounce, then breathes slowly.
@@ -810,7 +826,7 @@
         g.rotate(-540 * Math.pow(1 - p, 3) * Math.PI / 180);
         g.scale(scale, scale);
         g.globalAlpha = Math.min(1, s * 2);
-        g.shadowColor = "#4fb3ff"; g.shadowBlur = 18 * S;
+        g.shadowColor = "#3fbf8a"; g.shadowBlur = 18 * S;
         const side = 210;
         g.drawImage(logo, -side / 2, -side / 2, side, side);
         g.restore();

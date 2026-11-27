@@ -20,10 +20,12 @@ build/lemuri
 ## Main features
 
 - Host tree: nested folders you drag around, a mark showing which servers answer on their SSH port, a badge with the open sessions. Double-click opens the shell.
-- Tabs and split panes: one tab per session, split a terminal side by side or one above the other, on the same host or another; sync sends what you type to every pane.
+- Tabs and split panes: each terminal has a band on top (host, the shell's title, gauge and commands), one tab per session, split a terminal side by side or one above the other, on the same host or another; sync sends what you type to every pane.
 - Files: drag files or folders onto a terminal to upload them to the shell's current folder (when the shell announces it with OSC 7, or with interactive mode on; otherwise the home folder); after `ls`, right-click a name to download it. Overwrites are shown before anything moves; files are written under a temporary name until complete; symbolic links are not followed.
+- Files view: a folder icon in the band over a server terminal swaps the shell for two panes, this computer on the left and the server on the right (starting in the shell's folder); double-click or drag to copy across; new folder, rename and delete on both sides (local files go to the trash).
+- Launch groups: named lists of servers opened together, split in one tab (two side by side, three with one large, four as a grid; more in more tabs). A folder's servers open the same way with "Open all, split". The clock button and Ctrl+Shift+O list the last five servers started.
 - Live metrics: CPU, memory, disks, uptime, pending updates (and how many are security fixes) and whether a reboot is required, read over SSH with no agent on the server.
-- Ghost mode: the window becomes a see-through terminal on the desktop, anchored to a screen edge; F11 hides and shows it.
+- Ghost mode: the window becomes a see-through terminal on the desktop, anchored to a screen edge; F11 hides and shows it. The files view and the Team page work there too.
 - Backup: one encrypted file with hosts, vault and selected SSH keys; importing never overwrites `~/.ssh`.
 - Import of `~/.ssh/config`, `ProxyJump` and keys included.
 - Jump hosts like `ssh -J`; every host key at every hop is checked against `known_hosts`, new ones confirmed by hand.
