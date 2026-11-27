@@ -341,7 +341,7 @@
             <span>Source on GitHub</span>
           </a>
         </div>
-        <p class="download-note" id="download-note">Free and open source · MIT license · Linux (.deb)</p>
+        <p class="download-note" id="download-note">Free and open source · MIT license · Linux (PPA or .deb)</p>
       </div>
     </div>
   </div>
@@ -521,9 +521,15 @@
   <section id="download">
     <div class="wrap">
       <h2>Get Lemuri</h2>
-      <p class="intro">Free and open source, MIT licensed. A package for Ubuntu and Debian, about 1.3&nbsp;MB, that keeps itself up to date.</p>
+      <p class="intro">Free and open source, MIT licensed. A package of about 1.3&nbsp;MB for Ubuntu and Debian: from the PPA, updated by apt, or as a .deb that keeps itself up to date.</p>
       <div class="split">
         <div>
+          <p style="margin:0 0 10px;color:var(--muted)">On Ubuntu 24.04, 26.04 or 26.10, from the PPA; updates come with the others from apt:</p>
+          <div class="terminal">
+            <div><span class="p">$ </span>sudo add-apt-repository ppa:al-redai/lemuri</div>
+            <div><span class="p">$ </span>sudo apt install lemuri</div>
+          </div>
+          <p style="margin:22px 0 10px;color:var(--muted)">On Debian and other Ubuntu releases, download the .deb, which updates itself from the app:</p>
           <p style="margin:0 0 14px"><a class="btn primary link-release" href="https://github.com/getlemuri/lemuri/releases/latest">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
             <span>Download the .deb</span></a></p>
@@ -541,7 +547,7 @@
           </div>
         </div>
         <table class="facts">
-          <tr><td>Linux</td><td>Ubuntu 24.04 or newer, Debian and their derivatives (.deb). Developed and tested on Ubuntu with GNOME. A .tar.gz is in every release for other distributions.</td></tr>
+          <tr><td>Linux</td><td>Ubuntu 24.04 or newer, Debian and their derivatives (PPA for the supported Ubuntu releases, .deb for the rest). Developed and tested on Ubuntu with GNOME. A .tar.gz is in every release for other distributions.</td></tr>
           <tr><td>macOS</td><td>Builds from source, but not tested on a real Mac yet.</td></tr>
           <tr><td>Data</td><td>Your hosts, vault and settings stay in <code>~/.lemuri</code>, in the same format as the first version of Lemuri, so updating keeps them.</td></tr>
           <tr><td>Signed</td><td>Packages are signed, and the app installs an update only if the signature matches one of these keys (<code style="white-space:nowrap">ssh-keygen -lf</code>):<br>

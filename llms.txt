@@ -2,13 +2,20 @@
 
 > Lemuri is a free, open source (MIT) desktop SSH console for the servers and VPS you manage: a tree of hosts, tabs and split terminals, uploads and downloads over SFTP from the terminal, live metrics, an encrypted password vault, one-file backups and end-to-end encrypted sharing of hosts with a team. It is native, written in C++ with Qt 6, and runs on Linux (developed and tested on Ubuntu with GNOME); macOS builds from source but is not tested on a real Mac yet.
 
-A .deb package for Ubuntu 24.04 or newer and Debian is attached to every release on GitHub (https://github.com/getlemuri/lemuri/releases/latest), with a .tar.gz for other distributions. Install it with:
+On Ubuntu 24.04, 26.04 and 26.10 it installs from the PPA, and apt keeps it up to date:
+
+```
+sudo add-apt-repository ppa:al-redai/lemuri
+sudo apt install lemuri
+```
+
+For Debian and other Ubuntu releases, a .deb package is attached to every release on GitHub (https://github.com/getlemuri/lemuri/releases/latest), with a .tar.gz for other distributions. Install it with:
 
 ```
 sudo apt install ./lemuri_*_amd64.deb
 ```
 
-Updates are offered and installed from the app; every package is signed and checked before installing. To build from source (Qt 6.4+, libvterm, libssh, libargon2, OpenSSL, CMake, Ninja):
+The .deb offers and installs its updates from the app; every package is signed and checked before installing. To build from source (Qt 6.4+, libvterm, libssh, libargon2, OpenSSL, CMake, Ninja):
 
 ```
 git clone https://github.com/getlemuri/lemuri
